@@ -2,12 +2,18 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="/usr/local/mysql/bin:$PATH"
+export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3.4/lib/pkgconfig/" 
 ZSH_THEME="half-life"
 
 # make sure the --git-dir is the same as the
 # directory where you created the repo above.
 alias config="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias sl=ls
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -65,3 +71,6 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
